@@ -1,58 +1,24 @@
+
+
 <?php
 
+        // making an connection
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "notes";
 
-// making an connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "notes";
+            $conn = mysqli_connect($servername, $username, $password, $database);
+            if(!$conn)
+            {
+                die("facing issues". mysqli_connect_error());
+            }
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-if(!$conn)
-{
-    die("facing issues". mysqli_connect_error());
-}
+        
 
-
-// sql query selecting data
-$sql = "select * from notesdesc";
-$query_result = mysqli_query($conn, $sql);
-
-if(!$query_result)
-{
-    echo "we are facing some issues while fetching data<br>";
-}
-else
-{
-    // rows are displaying
-    $rows = mysqli_fetch_assoc($query_result);
-    $row_count = mysqli_num_rows($query_result);
-    echo "we found $row_count rows<br>";
-
-    while($rows != NULL)
-    {
-        echo "Sr no. = ".$rows['srno']. " || Title = ". $rows['title']. " || Description = ". $rows['description']. "<br>";
-        $rows = mysqli_fetch_assoc($query_result);
+    ?>
 
 
-        // js script tag to insert table information at respective place
-        // <script language='javascript'>
-
-        //     const srno = document.query_selector(".srno");
-        //     srno.style.textContent = $rows['srno'];
-
-        //     const title = document.query_selector(".title");
-        //     title.style.textContent = $rows['title'];
-            
-        //     const desc = document.query_selector(".desc");
-        //     desc.style.textContent = $rows['description'];
-
-        // </script>
-    }
-}
-
-
-?>
 
 
 
@@ -61,12 +27,144 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+
     <title>Digital notes</title>
 </head>
 <body>
-    <p class="srno"></p>
-    <p class="title"></p>
-    <p class="desc"></p>
+            
+<div class="container">
+
+
+    <h1>
+        Add note to notes app
+    </h1>
+
+    <div class="add-record">
+
+        <form action/php_programs/notesapp/index.php" method="POST">
+
+            <label for="notetitle">Note title</label>
+            <input type="text" name="notetitle" id="n-title">
+
+            <br><br>
+
+            <label for="desc">Note description</label>
+            <input type="text" name="notedesc" id="n-desc">
+
+            <br><br>
+
+            <input type="submit" value="Add Note">
+
+            <br><br>
+
+            
+            <?php
+            // getting form data in variable
+            $desc = "";
+            $title = "";
+            
+            if($_SERVER['REQUEST_METHOD'])
+            {
+
+                if (isset($_POST['notetitle'])) {
+                    $title = $_POST['notetitle'];
+                }
+                if (isset($_POST['notedesc'])) {
+                    $desc = $_POST['notedesc'];
+                }
+                
+                if($title != "" && $desc != "")
+                {
+                    // querying to database
+                    $sql = "INSERT INTO notesdesc(title, description) VALUES('$title', '$desc')";
+                    
+                    $insertion_result = mysqli_query($conn, $sql);
+                    if($insertion_result)
+                    {
+                        echo "<br>insertion in database is successful";
+                    }
+                    else
+                    {
+                        echo "data not inserted. reason = " . mysqli_error($conn);
+                    }
+                    
+                    echo "<script>window.location = 'index.php';</script>";
+                    exit(); // Make sure to terminate the script after redirection
+                }
+                
+            }
+            ?>
+        </form>
+
+    </div>
+
+
+
+    <div class="records-display-section">
+        <div class="info-just-before-table">
+            <div>
+                <p class="show-n-records-para">
+                    show <input type="number"> records
+                </p>
+            </div>
+
+            <div>
+                <input type="submit" value="Search">
+                <input type="text" name="search">
+            </div>
+        </div>
+
+        
+        <div class="records-table-div">
+
+            <table class="records-table">
+                <thead>
+                    <tr>
+                        <th class="srno">
+                            Sr No
+                        </th>
+                        <th class= "title">
+                            Title
+                        </th>
+                        <th class= "desc">
+                            Description
+                        </th>
+                        <th class= "action">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                        $sql = "SELECT * FROM `notesdesc`";
+                        $result = mysqli_query($conn, $sql);
+                        $sno = 0;
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            $sno = $sno + 1;
+                            echo "<tr>
+                                    <th scope='row'>". $sno . "</th>
+                                    <td>". $row['title'] . "</td>
+                                    <td>". $row['description'] . "</td>
+                                    <td> <button id=e".$sno.">Edit</button> <button id=d".$sno.">Delete</button>  </td>
+                                </tr>";
+                        }
+
+                    ?>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
 </body>
 </html>
 
