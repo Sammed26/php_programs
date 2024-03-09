@@ -15,8 +15,8 @@
             }
 
         
-
-    ?>
+?>
+    
 
 
 
@@ -28,7 +28,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-
     <title>Digital notes</title>
 </head>
 <body>
@@ -109,9 +108,9 @@
                 </p>
             </div>
 
-            <div>
-                <input type="submit" value="Search">
-                <input type="text" name="search">
+            <div class="search-section">
+                <button class="search-btn">Search</button>
+                <input type="text" name="search" class="search-input-box" placeholder="enter title to search for">
             </div>
         </div>
 
@@ -165,7 +164,54 @@
 
 </div>
 
+
+
+
+<!-- this i can't do because mixing php and javascript is not possible so make use of AJAX  -->
+
+<script>
+
+    console.log("hi how are you");
+
+
+    // ==================== search section styling ============================
+
+    const search_btn = document.querySelector(".search-btn");
+    const search_input_box = document.querySelector(".search-input-box");
+    // console.log(search_btn);
+    search_btn.addEventListener("click", ()=>{
+        // console.log(search_input_box.value);
+        
+        if(search_input_box.value == "")
+        {
+            console.log("nothing is entered");
+        }
+        else
+        {
+            $sql = "SELECT * FROM `notesdesc` where ";
+                    $result = mysqli_query($conn, $sql);
+                    $sno = 0;
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        $sno = $sno + 1;
+                        echo "<tr>
+                                <th scope='row'>". $sno . "</th>
+                                <td>". $row['title'] . "</td>
+                                <td>". $row['description'] . "</td>
+                                <td> <button id=e".$sno.">Edit</button> <button id=d".$sno.">Delete</button>  </td>
+                            </tr>";
+                    }
+            console.log(search_input_box.value);
+        }
+    })
+
+</script>
+
+
+
 </body>
 </html>
+
+
 
 
