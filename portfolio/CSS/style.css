@@ -1,0 +1,778 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+body{
+    font-family: sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.whole-page{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('../Images/markus-spiske-Skf7HxARcoc-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* ============= utility classes ============= */
+
+.container{
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto;
+}
+.btn{
+    display: inline-block;
+    height: 4rem;
+    width: 15rem;
+    background: black;
+    color: white;
+    text-align: center;
+    margin: auto 0;
+    cursor: pointer;
+    font-size: 2rem;
+    padding-top: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.191);
+    font-weight: 500;
+}
+
+
+
+/* ============ navbar styling ================ */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding-top: 1rem;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+}
+.navbar ul li{
+    padding-left: 5rem;
+
+}
+.navbar ul li a{
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.navbar ul li a:hover{
+    border-bottom: 2px solid blueviolet;
+}
+.name h1{
+    font-size: 3rem;
+    text-transform: capitalize;
+    padding: 1rem 0;
+}
+
+
+
+
+
+/* ================== main-home-content styling ==================== */
+
+.photo-name{
+    background: linear-gradient(rgba(0, 0, 0, 0.164), rgba(0, 0, 0, 0.164));
+    height: 45vh;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px 20px 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    
+}
+.home .header .name h1{
+    color: white;
+}
+.main-home-content{
+    width: 98%;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    border-radius: 20px;
+}
+.photo img{
+    height: 40vh;
+    width: 60%;
+    border-radius: 10px 10px 0 0;
+}
+.photo{
+    width: 40%;
+    text-align: left;
+    padding-top: 5rem;
+    padding-left: 6rem;
+}
+.description-section{
+    width: 60%;
+    text-align: center;
+    margin: auto 0;
+}
+
+.description-section h1{
+    font-size: 5rem;
+}
+.description-section p{
+    font-size: 2rem;
+    padding: 1.5rem 0;
+}
+.social-links i{
+    padding: 1rem;
+    color: white;
+}
+.social-links a{
+    color: black;
+}
+
+
+
+/* ================== about styling =================== */
+
+.about{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+}
+.info{
+    width: 50%;
+    text-align: left;
+    padding-left: 2rem;
+}
+.details{
+    width: 50%;
+    text-align: left;
+    padding-left: 20rem;
+}
+.info h2{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid black;
+    width: 90%;
+}
+.info p{
+    font-size: 2rem;
+    padding: 1rem;
+    line-height: 2.5rem;
+}
+
+.details table td{
+    font-size: 2rem;
+}
+.details table td:nth-child(2)
+{
+    padding-left: 3rem;
+}
+.details table tr{
+    height: 3rem;
+
+}
+
+.details table tr td:first-of-type{
+    font-weight: 600;
+}
+
+
+
+
+
+/* ================= footer styling ============= */
+
+.footer{
+    height: 7rem;
+    background: black;
+
+}
+.footer p{
+    color:  white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+}
+
+
+
+
+
+
+
+
+/* ====================== contact page details ====================== */
+
+/* .contact-whole-page{
+    height: 100vh;
+} */
+
+.contact-info .heading{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5rem;
+    font-size: 3rem;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.617);
+    border-left: none;
+    border-right: none; 
+    border-radius: 50px;
+    width: 30%;
+    margin-bottom: 3rem;
+
+}
+.contact-page-header{
+    padding: 1rem 2rem 0 2rem;
+
+}
+.contact-entity p:first-child{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    color: rgb(45, 34, 34);
+}
+.contact-links{
+    margin-bottom: 4rem;
+}
+.contact-entity p:nth-child(2)
+{
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+}
+.contact-entity{
+    padding: 3rem 0;
+
+}
+.contact-entity1{
+    float: left;
+    width: 50%;
+    padding-bottom: 2.5rem;
+    
+}
+.contact-entity2{
+    float: right;
+    width: 50%;
+    padding-bottom: 2.5rem;
+    color: white;
+}
+.contact-entity3{
+    text-align: center;
+    float: left;
+    width: 33.33%;
+}
+.contact-entity4{
+    float: left;
+    width: 33.33%;
+}
+.contact-entity5{
+    float: right;
+    width: 33.33%;
+}
+.contact-links::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.contact-entity .btn:hover{
+    background: white;
+    outline: none;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+.contact-info{
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('../Images/contact_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 4rem 10rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    color: white;
+  
+}
+
+.contact-icon{
+    font-size: 5rem;
+    padding-bottom: 1rem;
+}
+
+.contact-entity1 p:nth-child(2),
+.contact-entity2 p:nth-child(2){
+    text-decoration: underline;
+    color: white;
+    font-size: 2.5rem;
+}
+.contact-entity1 p:nth-child(1),
+.contact-entity2 p:nth-child(1){
+    color: white;
+    font-size: 3rem;
+}
+
+
+
+
+
+/* ===================== about page styling ===================== */
+.about-info{
+    text-align: center;
+    background: linear-gradient(rgba(92, 235, 251, 0.438), rgba(92, 235, 251, 0.438));
+    margin: 4rem 10rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+.about-info .about-page-heading h1{
+    font-size: 4rem;
+}
+.whole-page{
+    height: auto;
+}
+.about-info .about-para{
+    padding: 2rem 0;
+}
+.about-info .about-para p{
+    font-size: 2.5rem;
+    margin: 0 2rem;
+    text-align: left;
+    line-height: 200%;
+    
+}
+.about-whole-page{
+    color: white;
+    
+}
+
+
+
+
+
+
+/* ===================== resume page styling ====================== */
+.resume-info{
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.235)) ,url('../Images/resume_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 4rem 10rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    color: white;
+}
+.resume-info .resume-page .heading{
+    font-size: 4rem;
+}
+.resume-page .resume-para{
+    font-size: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.resume-page .btn:hover{
+    background: white;
+    outline: none;
+    color: black;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+
+
+/* ================================= project page styling =================== */
+.project-info{
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.424), rgba(0, 0, 0, 0.424)) ,url('../Images/projects_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 4rem 10rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+.project-info .heading{
+    font-size: 4em;
+}
+.project1{
+    padding: 2rem;
+}
+.project1 h2,
+.project2 h2{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.project{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.project2 .btn:hover{
+    background: white;
+    outline: none;
+    color: black;
+    transition: all 0.4s ease-in-out;
+}
+.project1 .btn:hover{
+    background: white;
+    outline: none;
+    color: black;
+    transition: all 0.4s ease-in-out;
+}
+.para2{
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+
+
+
+
+/* =================== certificate page styling ==================== */
+.certification-info{
+    text-align: center;
+    background: linear-gradient(rgba(92, 235, 251, 0.438), rgba(92, 235, 251, 0.438));
+    margin: 4rem 10rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.certificate-heading{
+    font-size: 4rem;
+    padding: 2rem 0;
+}
+.certificate{
+    padding: 2rem 0;
+}
+.certificate .para{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.certificate .sub-para{
+    font-size: 2rem;
+}
+.certificate .btn:hover{
+    background: white;
+    color: black;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+
+
+
+
+/* ======================== media queries ============================= */
+
+@media (max-width: 1080px)
+{
+    html{
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 895px)
+{
+    .about{
+        display: block;
+        
+    }
+    .info{
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+    .details{
+        width: 100%;
+    }
+    .photo-name{
+        display: block;
+        height: 70vh;
+    }
+    .photo{
+        width: 100%;
+        text-align: center;
+    }
+    .description-section{
+        width: 100%;
+        text-align: center;
+    }
+    .photo img{
+        text-align: center;
+        margin-left: -5rem;
+        /* height: 25vh; */
+        padding-bottom: 1rem;
+    }
+    .info h2{
+        font-size: 3rem;
+    }
+    .info p{
+        font-size: 1.5rem;
+    }
+    .contact-entity p{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 599px)
+{
+    html{
+        font-size: 7px;
+    }
+
+    .about{
+        display: block;
+    }
+    .about .info p{
+        font-size: 2rem;
+    }
+    .info{
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+    .details{
+        width: 100%;
+    }
+    .photo-name{
+        display: block;
+        height: 70vh;
+    }
+    .photo{
+        width: 100%;
+        text-align: center;
+    }
+    .description-section{
+        width: 100%;
+        text-align: center;
+    }
+    .photo img{
+        text-align: center;
+        margin-left: -5rem;
+        /* height: 50vh; */
+        padding-bottom: 1rem;
+        width: 150px;
+    }
+    .info h2{
+        font-size: 3rem;
+    }
+    .info p{
+        font-size: 1.5rem;
+    }
+    .contact-entity p{
+        font-size: 2rem;
+    }
+    
+
+    /* ===================  contact page ================== */
+    .contact-entity{
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .contact-info .heading{
+        font-size: 2rem;
+    }
+
+
+
+    /* ============ header media queries =========== */
+    .header{
+        display: block;
+        height: auto;
+    }
+    .header .name{
+        text-align: center;
+    }
+    .navbar ul{
+        display: block;
+        text-align: center;
+        margin-left: -4rem;
+    }
+    .navbar ul li{
+        display: block;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .navbar ul li a{
+        font-size: 2rem;
+    }
+    .about{
+        display: block;
+    }
+    .details{
+        width: 100%s;
+        text-align: left;
+        padding-left: -20rem;
+    }
+    
+    .info{
+        width: 100%;
+    }
+
+}
+
+
+/* @media (max-width: 599px)
+{
+    
+    .header{
+        display: block;
+        height: auto;
+    }
+    .header .name{
+        text-align: center;
+    }
+    .navbar ul{
+        display: block;
+        text-align: center;
+        margin-left: -4rem;
+    }
+    .navbar ul li{
+        display: block;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .navbar ul li a{
+        font-size: 2rem;
+    }
+    .about{
+        display: block;
+    }
+    .details{
+        width: 100%s;
+        text-align: left;
+        padding-left: -20rem;
+    }
+    
+    .info{
+        width: 100%;
+    }
+} */
+
+@media (max-width: 299px) {
+    html{
+        font-size: 3px;
+    }
+    
+    .about{
+        display: block;
+    }
+    .info{
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+    .details{
+        width: 100%;
+    }
+    .photo-name{
+        display: block;
+        height: 70vh;
+    }
+    .photo{
+        width: 100%;
+        text-align: center;
+    }
+    .description-section{
+        width: 100%;
+        text-align: center;
+    }
+    .photo img{
+        text-align: center;
+        margin-left: -5rem;
+        /* height: 25vh; */
+        padding-bottom: 1rem;
+    }
+    .info h2{
+        font-size: 3rem;
+    }
+    .info p{
+        font-size: 1.5rem;
+    }
+    .contact-entity p{
+        font-size: 2rem;
+    }
+    
+
+    /* ===================  contact page ================== */
+    .contact-entity{
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .contact-info .heading{
+        font-size: 2rem;
+    }
+
+
+    /* ============ header media queries =========== */
+    .header{
+        display: block;
+        height: auto;
+    }
+    .header .name{
+        text-align: center;
+    }
+    .navbar ul{
+        display: block;
+        text-align: center;
+        margin-left: -4rem;
+    }
+    .navbar ul li{
+        display: block;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .navbar ul li a{
+        font-size: 2rem;
+    }
+    .about{
+        display: block;
+    }
+    .details{
+        width: 100%s;
+        text-align: left;
+        padding-left: -20rem;
+    }
+    
+    .info{
+        width: 100%;
+    }
+
+
+}
+
+
+
+
+
+
