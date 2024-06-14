@@ -3,16 +3,17 @@
 <?php
 
         // making an connection
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "notes";
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "digital_notes";
 
-            $conn = mysqli_connect($servername, $username, $password, $database);
-            if(!$conn)
-            {
-                die("facing issues". mysqli_connect_error());
-            }
+        $conn = mysqli_connect($servername, $username, $password, $database);
+        if(!$conn)
+        {
+            die("facing issues". mysqli_connect_error());
+        }
+    
 
         
 ?>
@@ -137,7 +138,7 @@
                 <tbody>
                     <?php
 
-                        $sql = "SELECT * FROM `notesdesc`";
+                        $sql = "SELECT * FROM notesdesc";
                         $result = mysqli_query($conn, $sql);
                         $sno = 0;
                         while($row = mysqli_fetch_assoc($result))
@@ -163,49 +164,6 @@
 
 
 </div>
-
-
-
-
-<!-- this i can't do because mixing php and javascript is not possible so make use of AJAX  -->
-
-<script>
-
-    console.log("hi how are you");
-
-
-    // ==================== search section styling ============================
-
-    const search_btn = document.querySelector(".search-btn");
-    const search_input_box = document.querySelector(".search-input-box");
-    // console.log(search_btn);
-    search_btn.addEventListener("click", ()=>{
-        // console.log(search_input_box.value);
-        
-        if(search_input_box.value == "")
-        {
-            console.log("nothing is entered");
-        }
-        else
-        {
-            $sql = "SELECT * FROM `notesdesc` where ";
-                    $result = mysqli_query($conn, $sql);
-                    $sno = 0;
-                    while($row = mysqli_fetch_assoc($result))
-                    {
-                        $sno = $sno + 1;
-                        echo "<tr>
-                                <th scope='row'>". $sno . "</th>
-                                <td>". $row['title'] . "</td>
-                                <td>". $row['description'] . "</td>
-                                <td> <button id=e".$sno.">Edit</button> <button id=d".$sno.">Delete</button>  </td>
-                            </tr>";
-                    }
-            console.log(search_input_box.value);
-        }
-    })
-
-</script>
 
 
 

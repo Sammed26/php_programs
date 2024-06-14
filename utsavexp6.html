@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#hide").click(function () {
+          $("#p1").hide(500);
+        });
+
+        $("#show").click(function () {
+          $("#p1").show(500);
+        });
+
+        $("#toggle").click(function () {
+          $("#p2").toggle(500);
+        });
+
+        $("#slideup").click(function () {
+          $("#p3").slideUp("slow");
+        });
+
+        $("#slidedown").click(function () {
+          $("#p3").slideToggle("slow");
+        });
+      });
+    </script>
+
+    <style>
+      .container {
+        width: 70vw;
+        background-color: rgb(221, 238, 252);
+        padding: 10px 20px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+      }
+      .box {
+        border: 1px solid;
+        margin: 0 auto;
+        width: 90%;
+        background-color: rgb(146, 204, 254);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      h2 {
+        text-align: center;
+        border-bottom: 1px solid;
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>JQuery demonstration</h2>
+      <div class="one box">
+        <p id="p1">This is a paragraph for hide and show</p>
+
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+      </div>
+
+      <div class="two box">
+        <p id="p2">This is a paragraph for toggle</p>
+
+        <button id="toggle">Toggle</button>
+      </div>
+
+      <div class="three box">
+        <p id="p3">This is a paragraph for slide down</p>
+
+        <button id="slideup">slide up</button>
+        <button id="slidedown">slide down</button>
+      </div>
+    </div>
+  </body>
+</html>
